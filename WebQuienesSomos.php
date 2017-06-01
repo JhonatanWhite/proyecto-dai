@@ -13,11 +13,6 @@
 	<?php 
 	include 'menu1.php';
 	?>
- 
-    <?php
-	include 'menu2.php';
-	?>
-	
 	<body>
 	<?php 
 	print "<img src=\"Imagenes/quienes somos.jpg\">" 

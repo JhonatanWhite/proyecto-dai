@@ -12,12 +12,6 @@
 	<?php 
 	require 'menu1.php';
 	?>
- 
-    <?php
-	require 'menu2.php';
-	?>
-	
-	
 	<body>
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->

@@ -16,10 +16,6 @@
 	 <?php 
 	 require 'menu1.php';
 	 ?>
- 
-     <?php
-	 require 'menu2.php';
-	 ?>
 	
 	<?php
 

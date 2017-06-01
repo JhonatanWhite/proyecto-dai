@@ -22,6 +22,23 @@ class ClienteDAO {
 		return self::createObject($entidad);
 	}
 	
+	public static function searchByNombre($nombre) {
+		$conexion 	= self::getConnection();
+		$nombre 	= strtolower($nombre);
+		$nombre 	.= "%"; // $nombre = $nombre."%";
+		$nombre 	= "%".$nombre."%";
+		$sw 		= "SELECT * FROM ".self::TABLA." WHERE LOWER(nombre) LIKE :nombre";
+		$statement 	= $conexion->prepare($sw);
+		$statement->bindParam(":nombre", $nombre);
+		$statement->setFetchMode(PDO::FETCH_ASSOC);
+		$statement->execute();
+		$lista 		= array();
+		while( $entidad = $statement->fetch() ){
+			array_push( $lista, self::createObject($entidad) );
+		}
+		return $lista;
+	}
+	
 	public static function getAll() {
 		$conexion = self::getConnection();
 		$sw = "SELECT * FROM ".self::TABLA."";

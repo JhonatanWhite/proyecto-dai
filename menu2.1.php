@@ -31,4 +31,5 @@ li a:hover:not(.active) {
   <li><a href="WebFormularioContacto.php">Form. Contacto</a></li>	
   <li><a href="WebQuienesSomos.php">Quienes Somos</a></li>
   <li><a href="WebFormularioRegistro.php">Form. Registro</a></li>
+  <li><a onClick="window.location.href='login.html'">Iniciar Sesión</a></li>
 </ul>

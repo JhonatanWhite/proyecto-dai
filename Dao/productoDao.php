@@ -22,6 +22,22 @@ class productoDao {
 		return self::createObject($entidad);
 	}
 	
+	public static function searchByCategory($categoria) {
+		$conexion 	= self::getConnection();
+		$categoria 	= strtolower($categoria);
+		$categoria 	.= "%"; // $categoria = $categoria."%";
+		$categoria 	= "%".$categoria."%";
+		$sw 		= "SELECT * FROM ".self::TABLA." WHERE LOWER(categoria) LIKE :categoria";
+		$statement 	= $conexion->prepare($sw);
+		$statement->bindParam(":categoria", $categoria);
+		$statement->setFetchMode(PDO::FETCH_ASSOC);
+		$statement->execute();
+		$lista 		= array();
+		while( $entidad = $statement->fetch() ){
+			array_push( $lista, self::createObject($entidad) );
+		}
+		return $lista;
+	}
 	public static function getAll() {
 		$conexion = self::getConnection();
 		$sw = "SELECT * FROM ".self::TABLA."";

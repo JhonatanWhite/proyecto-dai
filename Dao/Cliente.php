@@ -7,12 +7,12 @@
 
 class Cliente {
 	
-	private $id = 0;
-	private $rut;
-	private $nombre;
-	private $direccion;
-	private $correo;
-	private $telefono;
+	public $id = 0;
+	public $rut;
+	public $nombre;
+	public $direccion;
+	public $correo;
+	public $telefono;
 	
 	public function __construct($id, $rut, $nombre, $direccion, $correo, $telefono) {
 		// argumentos como array

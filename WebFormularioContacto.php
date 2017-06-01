@@ -12,10 +12,6 @@
 	<?php 
 	require 'menu1.php';
 	?>
- 
-    <?php
-	require 'menu2.php';
-	?>
 	
 <body>
 			<h1><i class="fa fa-phone" aria-hidden="true"></i> Formulario de Contacto </h1>

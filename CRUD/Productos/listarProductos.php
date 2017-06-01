@@ -19,13 +19,20 @@
 
 require_once "../../DAO/productoDao.php";
 
-$productos = productoDao::getAll();
+if(isset($_GET["categoria"])){
+	$categoria 	= htmlspecialchars($_GET["categoria"]);
+}else {
+	$categoria 	= "";
+}
+$productos = productoDao::searchByCategory($categoria);
 ?>
 <div class="container">
 <h1>Productos <i class="fa fa-database" aria-hidden="true"></i></h1>
+<form method="get">
 <a class="btn btn-success" href="formProd.php" role="button">Nuevo</a>
 <a class="btn btn-success" href="../../menu.php" role="button">Volver Atrás</a>
 <a class="btn btn-success" href="../../index.php" role="button">Volver a Página Principal</a>
+<input type="text" placeholder="Ej: Celular" name="categoria" value="<?=$categoria?>" /> <button type="submit" class="btn btn-warning">Busca Por Categoria</button>
 <br >
 <br >
 <table class="table table-hover">
